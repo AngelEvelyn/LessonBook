@@ -5,8 +5,15 @@ const initialState = {
   resultList: [],
   planList: [],
   login: false,
-  user: "",
-  keyword: ""
+  username: '',
+  password: '',
+  userId: '',
+  keyword: '',
+  title: '',
+  materials: '',
+  steps: '',
+  domain: '',
+  location: '',
 };
 
 
@@ -20,23 +27,10 @@ const lessonsReducer = (state=initialState, action) => {
     case types.ADD_PLAN:
       // increment lastMarketId and totalMarkets counters
       totalPlans = state.totalPlans + 1
-      userPlans = //userPlans.length from database
 
       // create the new market object from provided data
       planList = state.planList.slice();
-      const newPlan = {
-          // what goes in here?
-        title: title,
-        materials: [],
-        steps: {},
-        domain:"",
-        location: "",
-        author: user,
-      };
-      //add new plan to database
-
-      // push the name of plan onto the planList
-      planList.push(newPlan.title);
+      planList.push(action.payload.title);
 
       // return updated state
       return {
@@ -49,9 +43,23 @@ const lessonsReducer = (state=initialState, action) => {
 
       return {
         ...state,
-        user: user,
+        userId: action.payload,
         login: true
       }
+    case types.USERNAME:
+
+        return {
+          ...state,
+          username: action.payload,
+        }
+
+    case types.PASSWORD:
+
+      return {
+        ...state,
+        password: action.payload,
+      }
+
 
     case types.RESULTS:
       //resultList = returnList from the database

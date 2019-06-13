@@ -6,13 +6,11 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-
-
   
   render() {
     return(
       <div className="App">
-        <h1>LESSONOPEDIA</h1>
+        <h1>Plan Share Grow</h1>
         <MainContainer />
       </div>
     )

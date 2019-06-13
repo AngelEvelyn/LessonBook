@@ -1,19 +1,26 @@
 import React from 'react';
 
-const LOGIN = props => (
+const LOGIN = ({
+  username,
+  password,
+  login,
+  signup
+}) => (
   <div className="innerbox" id="loginBox">
     <div>
-      Log In:
-      <form> 
-        <input type="text" id="userName" />
-        <input type="text" id="password" />
+      LOG IN:
+      <form onSubmit={login}>
+        <input type="text" id="userName" value="Username" onChange={username}/>
+        <input type="text" id="password" value="Password" onChange={password}/>
+        <button className="logButton" type="submit">Submit</button>
       </form>
     </div>
     <div>
       SIGN UP:
-      <form> 
-        <input type="text" id="signUser" />
-        <input type="text" id="signPass" />
+      <form onSubmit={signup}> 
+        <input type="text" id="signUser" value="Username" onChange={username}/>
+        <input type="text" id="signPass" value="Password" onChange={password}/>
+        <button className="logButton" type="submit">Submit</button>
       </form>
     </div>
   </div>

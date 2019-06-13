@@ -10,7 +10,8 @@ import Search from '../components/Search.jsx';
 const mapStateToProps = store => ({
   // provide pertinent state here
   planList: store.lessons.planList,
-  resultList: store.lessons.resultList
+  resultList: store.lessons.resultList,
+  user: store.lessons.user
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -27,6 +28,7 @@ class UserContainer extends Component {
   render() {
     return(
       <div className="innerbox">
+        Test
         <Creator addPlan={this.props.addPlan} />
         <Search planList={this.props.planList} resultList={this.props.resultList}/>
       </div>

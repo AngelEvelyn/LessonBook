@@ -13,7 +13,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  
+  user
 });
 
 class MainContainer extends Component {
@@ -23,18 +23,20 @@ class MainContainer extends Component {
 
   render() {
 
-    let Display;
+    let Display = [];
     const logComponent = <Login login={this.props.login} user={this.props.user}/>;
-    const userComponent = <UserContainer planList={this.props.planList} resultList={this.props.resultList}/>
-    if(login){
-      Display = [logComponent, userComponent];
+    const userContainer = <UserContainer planList={this.props.planList} resultList={this.props.resultList} user={this.props.user}/>
+    console.log('login: ', this.props.login);
+    if(this.props.login){
+      Display.push(logComponent, userContainer);
     } else Display = logComponent;
+    //Display = logComponent;
 
     return(
       <div className="container">
         <div className="outerBox">
-          <h1 id="header">Welcome to Lessonopedia</h1>
-          {Display}
+          <h1 id="header"></h1>
+          { Display }
         </div>
       </div>
     )

@@ -5,14 +5,25 @@ export const addPlan = (plan) => ({
   payload: plan,
 });
 
-export const login = (user) => ({
+export const login = () => ({
   type: types.LOGIN,
-  payload: user,
+  
+})
+
+export const signup = () => ({
+  type: types.SIGNUP,
+  
 })
 
 export const search = (keyword) => ({
   type: types.SEARCH,
   payload: keyword,
+})
+
+export const username = (username) => ({
+  type: types.USERNAME,
+  payload: username
+
 })
 
 export const results = () => ({
